@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_PATH: /app/data/shop.sqlite3
+    volumes:
+      - shop_data:/app/data
+volumes:
+  shop_data:
